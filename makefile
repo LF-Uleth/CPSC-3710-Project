@@ -1,25 +1,16 @@
-# Makefile for OpenGL/GLUT program
 
-# Compiler
-CC = gcc
+CXX = g++
 
-# Compiler flags
-CFLAGS = -Wall -Wextra -std=c99
+CXXFLAGS = -Wall -Wextra -std=c++17
 
-# Libraries to link
 LIBS = -lGL -lGLU -lglut
 
-# Source and output
 SRC = robot.cpp
 OUT = robot
-
-# Default target
 all: $(OUT)
 
-# Build rule
 $(OUT): $(SRC)
-	$(CC) $(CFLAGS) $(SRC) -o $(OUT) $(LIBS)
+	$(CXX) $(CXXFLAGS) $(SRC) -o $(OUT) $(LIBS)
 
-# Clean up build files
 clean:
 	rm -f $(OUT)
