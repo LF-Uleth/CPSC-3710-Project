@@ -46,13 +46,25 @@ void initGL() {
     glClearColor(0.1f, 0.1f, 0.2f, 1.0f);
 }
 
+void reshape(int w, int h)
+{
+ glViewport (0, 0, (GLsizei) w, (GLsizei) h);
+ glMatrixMode(GL_PROJECTION);
+ glLoadIdentity();
+ gluPerspective(30.0, (GLdouble)w/(GLdouble)h, 1.0, 10.0) ;
+}
+
+
 int main(int argc, char** argv) {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
     glutInitWindowSize(800, 600);
     glutCreateWindow("OpenGL Robot");
     initGL();
+    glewInit();
+    init ();
     glutDisplayFunc(display);
+    glutReshapeFunc(reshape);
     glutMainLoop();
     return 0;
 }
