@@ -26,3 +26,8 @@ glPopMatrix();
 
     
 }
+
+void main(){
+drawRobot();
+
+}
