@@ -1,0 +1,6 @@
+To run:
+
+make
+./robot
+
+There are no animations or controls at the moment. It should render a single image of the robot from an angle. Verified on U of L lab PC.
